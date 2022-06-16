@@ -81,7 +81,7 @@ class NonInjectedCatalogEntityDetails extends Component<CatalogEntityDetailsProp
                 {entity.status.phase}
               </DrawerItem>
               <DrawerItem name="Labels">
-                {...getLabelBadges(entity, this.props.hideDetails)}
+                {getLabelBadges(entity, this.props.hideDetails)}
               </DrawerItem>
               {isDevelopment && (
                 <DrawerItem name="Id">
