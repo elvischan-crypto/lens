@@ -52,6 +52,7 @@ import callForPublicHelmRepositoriesInjectable from "./components/+preferences/k
 import platformInjectable from "../common/vars/platform.injectable";
 import startTopbarStateSyncInjectable from "./components/layout/top-bar/start-state-sync.injectable";
 import { registerMobX } from "@ogre-tools/injectable-extension-for-mobx";
+import clusterFrameParentElementInjectable from "./components/cluster-manager/parent-element.injectable";
 
 export const getDiForUnitTesting = (opts: { doGeneralOverrides?: boolean } = {}) => {
   const {
@@ -84,6 +85,7 @@ export const getDiForUnitTesting = (opts: { doGeneralOverrides?: boolean } = {})
 
     di.override(terminalSpawningPoolInjectable, () => document.createElement("div"));
     di.override(hostedClusterIdInjectable, () => undefined);
+    di.override(clusterFrameParentElementInjectable, () => document.createElement("div"));
 
     di.override(getAbsolutePathInjectable, () => getAbsolutePathFake);
     di.override(joinPathsInjectable, () => joinPathsFake);
